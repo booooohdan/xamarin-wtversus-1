@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+				  <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveCompareTank"
+				android:layout_above="@+id/adViewCompareTank"   
+					>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearSpinnerContainerT">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:id="@+id/linearSpinnerSetLeftT">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationLeftT" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankLeftT" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerTankLeft" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="50"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainerRightT">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationRightT" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankRightT" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerTankRight" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollViewT">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearScrollContainerT">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearImageContainerT">
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareTankImage1"
+                                    android:padding="0dp"
+                                    android:layout_margin="0dp"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareTankFlag1"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareTankImage2"
+                                    android:layout_weight="50"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareTankFlag2"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearTextContainerT">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/TankWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareTankLeftTextCannonName" />
+                                <Space
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="10" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareTankRightTextCannonName" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextPenetration" />
+                                <TextView
+                                    android:text="@string/TankPenetration"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextPenetration" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextPenetration" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextShellSpeed" />
+                                <TextView
+                                    android:text="@string/TankShellSpeed"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextShellSpeed" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextShellSpeed" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellAP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellAPHE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellAPCR"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellAPDS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellAPFSDS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHEAT"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHEATFS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellShrapnel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHESH"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellATGM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellSSM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHEATGRENADE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHEGRENADE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									  <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellHEVT"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                         <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftShellSAM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                                <TextView
+                                    android:text="@string/TankShellType"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="28"
+                                    android:id="@+id/CompareTankLabelTextShellType"
+                                    android:lineSpacingMultiplier="0.8" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellAP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellAPHE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellAPCR"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellAPDS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellAPFSDS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHEAT"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHEATFS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellShrapnel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHESH"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellATGM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellSSM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHEATGRENADE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHEGRENADE"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+								    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellHEVT"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                        <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightShellSAM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextReloadTime" />
+                                <TextView
+                                    android:text="@string/TankReloadTime"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextReloadTime" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextReloadTime" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextUpAimAngle" />
+                                <TextView
+                                    android:text="@string/TankUpAimAngle"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextUpAimAngle" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextUpAimAngle" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextDownAimAngle" />
+                                <TextView
+                                    android:text="@string/TankDownAimAngle"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextDownAimAngle" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextDownAimAngle" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextStabilizer" />
+                                <TextView
+                                    android:text="@string/TankStabilizer"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextStabilizer" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextStabilizer" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextAAMachineGunExist" />
+                                <TextView
+                                    android:text="@string/TankAAAMGun"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextAAMachineGunExist" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextAAMachineGunExist" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/TankArmor"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextReducedArmorFrontTurret" />
+                                <TextView
+                                    android:text="@string/TankReducedTurret"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextReducedArmorFrontTurret" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextReducedArmorFrontTurret" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextReducedArmorTopSheet" />
+                                <TextView
+                                    android:text="@string/TankReducedTopSheet"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextReducedArmorTopSheet" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextReducedArmorTopSheet" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextReducedArmorBottomSheet" />
+                                <TextView
+                                    android:text="@string/TankReducedBottomSheet"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextReducedArmorBottomSheet" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextReducedArmorBottomSheet" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/TankTTS"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextMaxSpeedAtRoad" />
+                                <TextView
+                                    android:text="@string/TankMaxSpdRoad"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextMaxSpeedAtRoad" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextMaxSpeedAtRoad" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextMaxSpeedAtTerrain" />
+                                <TextView
+                                    android:text="@string/TankMaxSpdGround"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextMaxSpeedAtTerrain" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextMaxSpeedAtTerrain"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextMaxReverseSpeed" />
+                                <TextView
+                                    android:text="@string/TankReverse"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextMaxReverseSpeed" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextMaxReverseSpeed"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextAccelerationTo100" />
+                                <TextView
+                                    android:text="@string/TankAccTo100"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextAccelerationTo100" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextAccelerationTo100" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextTurnTurretTime" />
+                                <TextView
+                                    android:text="@string/TankTurretTime"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextTurnTurretTime" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextTurnTurretTime" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextTurnHullTime" />
+                                <TextView
+                                    android:text="@string/TankHullTime"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextTurnHullTime" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextTurnHullTime" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextEnginePower" />
+                                <TextView
+                                    android:text="@string/TankEnginePower"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextEnginePower" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextEnginePower" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextWeight" />
+                                <TextView
+                                    android:text="@string/TankWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextWeight" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextWeight" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankLeftTextPowerToWeightRatio" />
+                                <TextView
+                                    android:text="@string/TankPowerToWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareTankLabelTextPowerToWeightRatio" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareTankRightTextPowerToWeightRatio" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+										<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/7814659381"
+	android:id="@+id/adViewCompareTank"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+  
+    <item android:title="@string/MenuStat">
+      <menu>
+        <item
+     android:id="@+id/nav_stat_info"
+     android:icon="@drawable/_menuInfoStat"
+     android:title="@string/MenuStatInfo" />
+        <item
+     android:id="@+id/nav_stat_compare"
+     android:icon="@drawable/_menuInfoCompare"
+     android:title="@string/MenuStatCompare" />
+      </menu>
+    </item>
+        <item android:title="@string/MenuAviation">
+      <menu>
+        <item
+     android:id="@+id/nav_avia_info"
+     android:icon="@drawable/_menuInfo"
+     android:title="@string/MenuInfo" />
+        <item
+    android:id="@+id/nav_avia_compare"
+    android:icon="@drawable/_menuCompare"
+    android:title="@string/MenuCompare" />
+        <item
+    android:id="@+id/nav_avia_thebest"
+    android:icon="@drawable/_menuTheBest"
+    android:title="@string/MenuTop" />
+      </menu>
+    </item>
+    <item android:title="@string/MenuGround">
+      <menu>
+        <item
+     android:id="@+id/nav_army_info"
+     android:icon="@drawable/_menuInfo"
+     android:title="@string/MenuInfo" />
+        <item
+    android:id="@+id/nav_army_compare"
+    android:icon="@drawable/_menuCompare"
+    android:title="@string/MenuCompare" />
+        <item
+    android:id="@+id/nav_army_thebest"
+    android:icon="@drawable/_menuTheBest"
+    android:title="@string/MenuTop" />
+      </menu>
+    </item>
+    <item android:title="@string/MenuHeli">
+      <menu>
+        <item
+ android:id="@+id/nav_heli_info"
+ android:icon="@drawable/_menuInfo"
+ android:title="@string/MenuInfo" />
+        <item
+    android:id="@+id/nav_heli_compare"
+    android:icon="@drawable/_menuCompare"
+    android:title="@string/MenuCompare" />
+        <item
+    android:id="@+id/nav_heli_thebest"
+    android:icon="@drawable/_menuTheBest"
+    android:title="@string/MenuTop" />
+      </menu>
+    </item>
+    <item android:title="@string/MenuNavy">
+      <menu>
+        <item
+ android:id="@+id/nav_navy_info"
+ android:icon="@drawable/_menuInfo"
+ android:title="@string/MenuInfo" />
+        <item
+    android:id="@+id/nav_navy_compare"
+    android:icon="@drawable/_menuCompare"
+    android:title="@string/MenuCompare" />
+        <item
+    android:id="@+id/nav_navy_thebest"
+    android:icon="@drawable/_menuTheBest"
+    android:title="@string/MenuTop" />
+      </menu>
+    </item>
+    <group>android:id="@+id/my_id"></group>
+    <!--Разделитель-->
+      <item>
+        <item
+   android:id="@+id/nav_memes"
+   android:icon="@drawable/_menuMemes"
+   android:title="@string/MenuMemes" />
+        <item
+   android:id="@+id/nav_dedoHerzer"
+   android:icon="@drawable/_menuSettings"
+   android:title="@string/MenuSettings" />
+        <item
+    android:id="@+id/nav_feedback"
+    android:icon="@drawable/_menuFeedback"
+    android:title="@string/MenuFeedback" />
+      </item>
+  </group>
+</menu>

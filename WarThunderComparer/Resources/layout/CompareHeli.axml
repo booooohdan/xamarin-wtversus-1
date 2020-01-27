@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+			  <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveCompareHeli"
+				android:layout_above="@+id/adViewCompareHeli"   
+					>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearSpinnerContainerH">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:id="@+id/linearSpinnerSetLeftH">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationLeftH" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankLeftH" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerHeliLeft" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="50"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainerRightH">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationRightH" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankRightH" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerHeliRight" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollViewH">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearScrollContainerH">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearImageContainerH">
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareHeliImage1"
+                                    android:padding="0dp"
+                                    android:layout_margin="0dp"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareHeliFlag1"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareHeliImage2"
+                                    android:layout_weight="50"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareHeliFlag2"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearTextContainerH">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlaneFTS"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftMaxSpeed" />
+                                <TextView
+                                    android:text="@string/HeliMaxSpeed"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelMaxSpeed" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightMaxSpeed" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftClimbTo1000" />
+                                <TextView
+                                    android:text="@string/HeliClimbTo1000"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelClimbTo1000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightClimbTo1000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftTurn360" />
+                                <TextView
+                                    android:text="@string/HeliTurn360"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelTurn360" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightTurn360" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftEnginePower" />
+                                <TextView
+                                    android:text="@string/PlaneEnginePower"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelEnginePower" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightEnginePower" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftWeight" />
+                                <TextView
+                                    android:text="@string/PlaneWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelWeight" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightWeight" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftThrustToWeightRatio" />
+                                <TextView
+                                    android:text="@string/PlanePowerToWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelThrustToWeightRatio" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightThrustToWeightRatio" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlaneWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHandlingAirToAir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHandlingAGMRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHandlingASMRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHandlingCannon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHandlingBomb"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+								<TextView
+									android:text="@string/PlaneHandingWeapon"
+									android:gravity="center"
+									android:textAppearance="?android:attr/textAppearanceSmall"
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_weight="28"
+									android:id="@+id/CompareHeliLabelHandingWeapon"
+									android:lineSpacingMultiplier="0.8"
+									android:textColor="#ff000000" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									  <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHandlingAirToAir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />								 
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHandlingAGMRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHandlingASMRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHandlingCannon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHandlingBomb"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftAGMCount" />
+                                <TextView
+                                    android:text="@string/HeliAGMCount"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelAGMCount" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightAGMCount" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftAGMArmorPenetration" />
+                                <TextView
+                                    android:text="@string/HeliAGMArmorPenetration"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelAGMArmorPenetration" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightAGMArmorPenetration" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftAGMSpeed" />
+                                <TextView
+                                    android:text="@string/HeliAGMSpeed"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelAGMSpeed" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightAGMSpeed" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftAGMRange" />
+                                <TextView
+                                    android:text="@string/HeliAGMRange"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelAGMRange" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightAGMRange" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftASMCount" />
+                                <TextView
+                                    android:text="@string/HeliASMCount"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelASMCount" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightASMCount" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftASMArmorPenetration" />
+                                <TextView
+                                    android:text="@string/HeliASMArmorPenetration"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelASMArmorPenetration" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightASMArmorPenetration"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftASMSpeed" />
+                                <TextView
+                                    android:text="@string/HeliASMSpeed"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelASMSpeed" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightASMSpeed"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliLeftBombLoad" />
+                                <TextView
+                                    android:text="@string/HeliBombLoad"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/CompareHeliLabelBombLoad" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/CompareHeliRightBombLoad" />
+                            </LinearLayout>
+
+							                  <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftHIRSS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									       <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftIRCM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									      <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliLeftFlares"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+
+                                  
+                                </LinearLayout>
+                                <TextView
+                                    android:text="@string/HeliLabelDefenceSystem"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="28"
+                                    android:id="@+id/CompareHeliLabelDefence"
+                                    android:lineSpacingMultiplier="0.8"
+				    				android:textColor="#ff000000"/>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									  <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightHIRSS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />						
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightIRCM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />                 
+											  <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareHeliRightFlares"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/HeliOffensiveWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+								   android:id="@+id/CompareHeliLabelOffensiveWeapon" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareHeliLeftOffensiveWeapon" />
+                                <Space
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="10" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareHeliRightOffensiveWeapon" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/HeliSuspensionWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/CompareHeliLabelSuspensionWeapon" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareHeliLeftSuspensionWeapon" />
+                                <Space
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="10" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/CompareHeliRightSuspensionWeapon" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+							<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/5339705136"
+	android:id="@+id/adViewCompareHeli"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

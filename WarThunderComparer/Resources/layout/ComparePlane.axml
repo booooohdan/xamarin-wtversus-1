@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveComparePlane"
+				android:layout_above="@+id/adViewComparePlane"   
+					>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearSpinnerContainer">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:id="@+id/linearSpinnerSetLeft">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationLeft" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankLeft" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerPlaneLeft" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="50"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainerRight">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="57"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/CompareSpinnerNationRight" />
+                            <Spinner
+                                android:layout_weight="43"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/CompareSpinnerRankRight" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CompareSpinnerPlaneRight" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollView1">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearScrollContainer">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearImageContainer">
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareImage1"
+                                    android:padding="0dp"
+                                    android:layout_margin="0dp"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareFlag1"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="50">
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareImage2"
+                                    android:layout_weight="50"
+                                    android:adjustViewBounds="true" />
+                                <ImageView
+                                    android:src="@drawable/_transparentPlane"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/CompareFlag2"
+                                    android:alpha="0.5"
+                                    android:layout_width="match_parent"
+                                    android:adjustViewBounds="true" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="100"
+                            android:id="@+id/linearTextContainer">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/ComparePlaneLabelTextName"
+                                    android:text="@string/PlaneFTS" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextMaxSpeedAt0" />
+                                <TextView
+                                    android:text="@string/PlaneMaxSpd0"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextMaxSpeedAt0" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextMaxSpeedAt0" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextMaxSpeedAt5000" />
+                                <TextView
+                                    android:text="@string/PlaneMaxSpd5000"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextMaxSpeedAt5000" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextMaxSpeedAt5000"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextTurnAt0" />
+                                <TextView
+                                    android:text="@string/PlaneTurn"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextTurnAt0" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextTurnAt0" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextClimb" />
+                                <TextView
+                                    android:text="@string/PlaneClimb"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextClimb" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextClimb" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextFlutter" />
+                                <TextView
+                                    android:text="@string/PlaneFlutter"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextFlutter" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextFlutter" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextEnginePower" />
+                                <TextView
+                                    android:text="@string/PlaneEnginePower"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextEnginePower" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextEnginePower" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextWeight" />
+                                <TextView
+                                    android:text="@string/PlaneWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextWeight" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextWeight" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextThrustToWeightRatio" />
+                                <TextView
+                                    android:text="@string/PlanePowerToWeight"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextThrustToWeightRatio" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextThrustToWeightRatio" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlaneWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/ComparePlaneLabelTextName" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextWeaponVolleyPerSecond" />
+                                <TextView
+                                    android:text="@string/PlaneVolleyPerSecond"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextWeaponVolleyPerSecond" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextWeaponVolleyPerSecond" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingAirToAir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									      <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingAirToGround"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingBomb"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									<ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingCannon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareLeftHandlingTorpedo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                                <TextView
+                                    android:text="@string/PlaneHandingWeapon"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="28"
+                                    android:id="@+id/ComparePlaneLabelTextHandingWeapon"
+                                    android:lineSpacingMultiplier="0.8" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="36"
+                                    android:gravity="center">
+									    <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingAirToAir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+									      <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingAirToGround"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingBomb"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingCannon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/CompareRightHandlingTorpedo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneLeftTextBombLoad" />
+                                <TextView
+                                    android:text="@string/PlaneBombLoad"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:id="@+id/ComparePlaneLabelTextBombLoad" />
+                                <TextView
+                                    android:text=""
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="25"
+                                    android:id="@+id/ComparePlaneRightTextBombLoad"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlaneWeaponCharacteristick"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="50"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/ComparePlaneLabelTextWeaponAndTurrels" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/ComparePlaneLeftTextWeaponAndTurrels" />
+                                <Space
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="10" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="45"
+                                    android:id="@+id/ComparePlaneRightTextWeaponAndTurrels" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+											<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/6481396418"
+	android:id="@+id/adViewComparePlane"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

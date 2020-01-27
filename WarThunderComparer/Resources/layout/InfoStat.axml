@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+				>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="100"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/aboveInfoStat"
+                    android:layout_above="@+id/adViewInfoStat"
+					>
+                    <TextView
+                        android:text="@string/StatTopHint"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TopHintTextViewInfo"
+                        android:textColor="#ff878787" />
+                    <android.webkit.WebView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:id="@+id/webViewInfoStat" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/InfoStatSearchPlayerLinearLayout">
+                        <TextView
+                            android:id="@+id/TextViewSquadInfo"
+                            android:text=""
+                            android:gravity="right|center"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_weight="30"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:textColor="#ff000000"
+                            android:paddingRight="5dp" 
+						/>
+                        <AutoCompleteTextView
+                            android:id="@+id/EditTextSearchInfo"
+                            android:hint="@string/StatYourNick"
+                            android:singleLine="true"
+                            android:text=""
+                            android:maxLines="1"
+                            android:layout_weight="40"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ff000000" />
+                        <ImageButton
+                            android:src="@drawable/_search_icon"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:layout_weight="8"
+                            android:id="@+id/ButtonSearchInfo"
+                            android:scaleType="centerInside"
+                            android:background="#fffafafa"
+                            android:paddingTop="5dp" />
+                        <Space
+                            android:layout_weight="22"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/InfoStatScrollViewContainer">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/InfoStatInScrollLinearContainer">
+                            <FrameLayout
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent">
+                                <android.support.v4.widget.ContentLoadingProgressBar
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    style="?android:attr/progressBarStyleLarge"
+                                    android:id="@+id/contentLoadingProgressBarInfo"
+                                    android:background="@android:color/transparent"
+                                    android:visibility="invisible"/>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="100">
+                                    <FrameLayout
+                                        android:layout_height="match_parent"
+                                        android:layout_width="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginBottom="10dp">
+                                        <ImageView
+                                            android:src="@drawable/_transparentInfo"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/InfoStatImage"
+                                            android:padding="0dp"
+                                            android:layout_margin="0dp"
+                                            android:layout_width="match_parent"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="centerInside" />
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:gravity="bottom"
+                                            android:id="@+id/InfoStatBackground"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                            <TextView
+                                                android:gravity="center"
+                                                android:textSize="20sp"
+                                                android:textColor="#ffffffff"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/InfoStatSkillName"
+                                                android:includeFontPadding="false"
+                                                android:lineSpacingExtra="0dp"/>
+                                        </LinearLayout>
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </FrameLayout>
+                            <TextView
+                                android:gravity="center"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:background="#d60000"
+                                android:textColor="#ffffff"
+                                android:id="@+id/InfoStatRedLabelAvia"
+                                android:text="@string/StatBEfficiency" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatInfoModeAB"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatModeAB"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text="@string/StatInfoModeRB"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="34"
+                                    android:id="@+id/InfoStatModeRB"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text="@string/StatInfoModeSB"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatModeSB"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatSkillAB"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="34"
+                                    android:id="@+id/InfoStatSkillRB"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatSkillSB"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    android:lineSpacingExtra="0dp"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatPriorityAB"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#ff000000"
+                                    android:textSize="15dp"
+                                    android:lineSpacingMultiplier="0.8" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="34"
+                                    android:id="@+id/InfoStatPriorityRB"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#ff000000"
+                                    android:lineSpacingMultiplier="0.8"/>
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="33"
+                                    android:id="@+id/InfoStatPrioritySB"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#ff000000"
+                                    android:lineSpacingMultiplier="0.8" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="100"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/InfoStatRedVehicleNumber"
+                                    android:text="@string/StatVehiclesNumberInfo" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestUS"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestGermany"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestUSSR"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestBritain"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestJapan"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestItaly"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:adjustViewBounds="true"
+                                    android:padding="10dp" />
+                                <ImageView
+                                    android:src="@drawable/_flagTheBestFrance"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="14"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitStart"
+                                    android:padding="10dp"
+                                    android:adjustViewBounds="true" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleUSA"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleGermany"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleUSSR"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleGB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleJapan"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleItaly"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="14"
+                                    android:id="@+id/InfoStatVehicleFrance"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="40"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/InfoStatRedGameModeString"
+                                    android:text="" />
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="20"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="@string/StatInfoModeAB"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="20"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="@string/StatInfoModeRB" />
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="20"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="@string/StatInfoModeSB"
+/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatWinRate"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatWinRateLabel"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatWinRateAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatWinRateRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatWinRateSB"
+                                    android:textColor="#ff000000" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="40"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/InfoStatRedGameModeAvia"
+                                    android:text="@string/StatAvia"
+/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="60"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatKillRespAvia"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatFraqRespRatioLabelAviaAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioAviaAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioAviaRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioAviaSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatBattleNumberAvia"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatBattleNumberLabelAviaAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberAviaAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberAviaRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberAviaSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+
+
+
+
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="40"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/InfoStatRedGameModeTank"
+                                    android:text="@string/StatArmy"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="60"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatKillRespTank"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatFraqRespRatioLabelTankAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioTankAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioTankRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioTankSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatBattleNumberTank"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatBattleNumberLabelTankAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberTankAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberTankRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberTankSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+
+
+
+
+
+
+
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="40"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:id="@+id/InfoStatRedGameModeShip"
+                                    android:text="@string/StatNavy" />
+                                <TextView
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="60"
+                                    android:background="#d60000"
+                                    android:textColor="#ffffff"
+                                    android:text="" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatKillRespShip"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatFraqRespRatioLabelShipAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioShipAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioShipRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFraqRespRatioShipSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatBattleNumberShip"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatBattleNumberLabelShipAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberShipAB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberShipRB"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBattleNumberShipSB"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+
+
+
+                            <TextView
+                                android:gravity="center"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="100"
+                                android:background="#d60000"
+                                android:textColor="#ffffff"
+                                android:id="@+id/InfoStatStatInfoVehiclePriorityLabel"
+                                android:text="@string/StatInfoVehiclePriority" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Space
+                                    android:layout_weight="20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+                                <ImageView
+                                    android:src="@drawable/_infoStatFighter"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatAttacker"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatBomber"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+                                <Space
+                                    android:layout_weight="20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/space" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Space
+                                    android:layout_weight="20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatFighter"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatAttacker"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBomber"
+                                    android:textColor="#ff000000" />
+                                <Space
+                                    android:layout_weight="20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Space
+                                    android:layout_weight="10"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+                                <ImageView
+                                    android:src="@drawable/_infoStatMiddleTank"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatHeavyTank"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatTankDestroyer"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+                                <ImageView
+                                    android:src="@drawable/_infoStatSPAA"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+                                <Space
+                                    android:layout_weight="10"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Space
+                                    android:layout_weight="10"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatMiddleTank"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatHeavyTank"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatTankDestroyer"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatSPAA"
+                                    android:textColor="#ff000000" />
+                                <Space
+                                    android:layout_weight="10"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"/>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:src="@drawable/_infoStatBoat"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatBarge"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp"  />
+                                <ImageView
+                                    android:src="@drawable/_infoStatSeaHunter"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+                                <ImageView
+                                    android:src="@drawable/_infoStatShipDestroyer"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+                                <ImageView
+                                    android:src="@drawable/_infoStatCruiser"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="20"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:maxHeight="30dp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBoat"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatBarge"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatSeaHunter"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatShipDestroyer"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:id="@+id/InfoStatCruiser"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:gravity="center"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="100"
+                                android:background="#d60000"
+                                android:textColor="#ffffff"
+                                android:id="@+id/InfoStatAdditionalLabel"
+                                android:text="@string/StatAdditionally" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatRegData"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatRegDataLabel"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoStatRegData"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatLevel"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatLevelLabel"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoStatLevel"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatFullGameTime"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatTotalTimeLabel"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoStatTotalTime"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                            <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/StatSLEarned"
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoStatSilverLionEarnedLabel"
+                                    android:textColor="#ff000000" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoStatSilverLionEarned"
+                                    android:textColor="#ff000000" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+                <com.google.android.gms.ads.AdView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ads:adSize="SMART_BANNER"
+                    ads:adUnitId="ca-app-pub-8211072909515345/2390054260"
+                    android:id="@+id/adViewInfoStat"
+                    android:layout_alignParentBottom="true"  />
+            </RelativeLayout>
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

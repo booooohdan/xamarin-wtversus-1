@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="colorControlNormal">#d60000</item>
+    <item name="colorPrimary">#d60000</item>
+    <item name="colorPrimaryDark">#9c0000</item>
+    <item name="colorAccent">#d60000</item>
+    <item name="itemIconTint">#6f6f6f</item>
+    <item name="itemTextColor">#6f6f6f</item>
+    <item name="android:textColorSecondary">#000000</item>
+    <item name="android:windowBackground">@color/material_grey_50</item>
+    <item name="android:listPreferredItemHeightSmall">33dp</item>
+    <item name="listPreferredItemHeightSmall">33dp</item>
+  </style>
+  <style name="MyTheme" parent="MyTheme.Base">
+  </style>
+</resources>

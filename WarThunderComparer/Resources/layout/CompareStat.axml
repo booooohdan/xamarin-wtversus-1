@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true">
+	<android.support.v4.widget.DrawerLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/drawer_layout">
+		<LinearLayout
+			android:id="@+id/layout_main"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+			<include
+				layout="@layout/_app_bar" />
+						 <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:weightSum="100"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveCompareStat"
+				android:layout_above="@+id/adViewCompareStat"   
+					>
+				<TextView
+					android:text="@string/StatTopHint"
+					android:gravity="center"
+					android:textSize="10sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/TopHintTextView"
+					android:textColor="#ff878787" 
+					/>
+				<Spinner
+					android:text=""
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/CompareStatSpinnerMode"
+					android:layout_marginLeft="35dp" 
+					/>
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/CompareStatSearchPlayerLinearLayout">
+					<LinearLayout
+							android:orientation="horizontal"
+												android:layout_weight="45"
+												android:layout_height="wrap_content"
+												android:layout_width="0dp">
+						<TextView
+							android:id="@+id/TextViewSquadLeft"
+							android:text=""
+							android:gravity="center"
+							android:textAppearance="?android:attr/textAppearanceSmall"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+						/>
+						<AutoCompleteTextView
+							android:id="@+id/EditTextSearchLeft"
+							android:hint="@string/StatYourNick"
+							android:singleLine="true"
+							android:maxLines="1"
+							android:gravity="center"
+							android:textAppearance="?android:attr/textAppearanceSmall"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
+						</LinearLayout>
+					<ImageButton
+						android:src="@drawable/_search_icon"
+						android:layout_width="0dp"
+						android:layout_height="match_parent"
+						android:adjustViewBounds="true"
+						android:layout_weight="10"
+						android:id="@+id/ButtonSearch"
+						android:scaleType="centerCrop"
+						android:background="#fffafafa" />
+				<LinearLayout
+							android:orientation="horizontal"
+												android:layout_weight="45"
+												android:layout_height="wrap_content"
+												android:layout_width="0dp">
+												<TextView
+						android:id="@+id/TextViewSquadRight"
+                        android:text=""						
+						android:gravity="center"
+						android:textAppearance="?android:attr/textAppearanceSmall"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						/>
+					<AutoCompleteTextView
+						android:id="@+id/EditTextSearchRight"
+						android:hint="@string/StatNickForCompare"
+						android:singleLine="true"
+						android:maxLines="1"
+						android:gravity="center"
+						android:textAppearance="?android:attr/textAppearanceSmall"
+					    android:layout_width="match_parent"
+						android:layout_height="wrap_content"/>
+				</LinearLayout>
+
+				</LinearLayout>
+				<ScrollView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/CompareStatScrollViewContainer">
+					<LinearLayout
+						android:orientation="vertical"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/CompareStatInScrollLinearContainer">
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelAvia"
+								android:text="@string/StatBEfficiency" />
+						</LinearLayout>
+				
+												  <FrameLayout
+								android:layout_height="wrap_content"
+									android:layout_width="match_parent"
+								>	
+							<android.support.v4.widget.ContentLoadingProgressBar
+							           	android:layout_width="match_parent"
+					          			android:layout_height="match_parent"
+				     				    style="?android:attr/progressBarStyleLarge"
+			         					android:id="@+id/contentLoadingProgressBar1"
+								    	android:background="@android:color/transparent"
+								android:visibility="invisible"
+									/>
+							<LinearLayout
+								android:orientation="horizontal"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:weightSum="100"
+								android:layout_marginBottom="3dp">
+								<FrameLayout
+									android:layout_height="match_parent"
+									android:layout_width="0dp"
+									android:layout_weight="50">
+									<ImageView
+										android:src="@drawable/_transparentPlane"
+										android:layout_height="match_parent"
+										android:id="@+id/LeftStatImage"
+										android:padding="0dp"
+										android:layout_margin="0dp"
+										android:layout_width="match_parent"
+										android:adjustViewBounds="true" />
+									<LinearLayout
+										android:orientation="vertical"
+										android:gravity="center"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent">
+										<LinearLayout
+											android:orientation="vertical"
+											android:gravity="bottom"
+											android:id="@+id/LeftStatBackground"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent">
+											<TextView
+												android:text=""
+												android:gravity="center"
+												android:textSize="20sp"
+												android:textColor="#ffffff"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:id="@+id/CompareStatLeftMainSkill"
+												android:includeFontPadding="false"
+												android:lineSpacingExtra="0dp" />
+											<TextView
+												android:text=""
+												android:gravity="center"
+												android:textSize="10sp"
+												android:textColor="#ffffff"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:id="@+id/CompareStatLeftMainSkillName"
+												android:includeFontPadding="false"
+												android:lineSpacingExtra="0dp" />
+										</LinearLayout>
+									</LinearLayout>
+								</FrameLayout>
+								<FrameLayout
+									android:layout_height="match_parent"
+									android:layout_width="0dp"
+									android:layout_weight="50">
+									<ImageView
+										android:src="@drawable/_transparentPlane"
+										android:layout_height="match_parent"
+										android:id="@+id/RightStatImage"
+										android:padding="0dp"
+										android:layout_margin="0dp"
+										android:layout_width="match_parent"
+										android:adjustViewBounds="true" />
+									<LinearLayout
+										android:orientation="vertical"
+										android:gravity="center"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent">
+										<LinearLayout
+											android:orientation="vertical"
+											android:gravity="bottom"
+											android:id="@+id/RightStatBackground"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent">
+											<TextView
+												android:text=""
+												android:gravity="center"
+												android:textSize="20sp"
+												android:textColor="#ffffff"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:includeFontPadding="false"
+												android:id="@+id/CompareStatRightMainSkill"
+												android:lineSpacingExtra="0dp"/>
+											<TextView
+												android:text=""
+												android:gravity="center"
+												android:textSize="10sp"
+												android:textColor="#ffffff"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:id="@+id/CompareStatRightMainSkillName"
+												android:includeFontPadding="false"
+												android:lineSpacingExtra="0dp"/>
+										</LinearLayout>
+									</LinearLayout>
+								</FrameLayout>
+							</LinearLayout>
+																							</FrameLayout>
+
+							<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftLevel" />
+							<TextView
+								android:text="@string/StatLevel"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelLevel" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightLevel" />
+						</LinearLayout>
+				
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftWinRate" />
+							<TextView
+								android:text="@string/StatWinRate"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelWinRate" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightWinRate" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelAvia"
+								android:text="@string/StatAvia" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftAviaKB" />
+							<TextView
+								android:text="@string/StatKillRespAvia"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelAviaKB" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightAviaKB" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftAviaMatchNumber" />
+							<TextView
+								android:text="@string/StatBattleNumberAvia"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelAviaMatchNumber" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightAviaMatchNumber" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelTank"
+								android:text="@string/StatArmy" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftTankKB" />
+							<TextView
+								android:text="@string/StatKillRespTank"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelTankKB" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightTankKB" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftTankMatchNumber" />
+							<TextView
+								android:text="@string/StatBattleNumberTank"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelTankMatchNumber" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightTankMatchNumber" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelShip"
+								android:text="@string/StatNavy" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftShipKB" />
+							<TextView
+								android:text="@string/StatKillRespShip"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelShipKB" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightShipKB" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftShipMatchNumber" />
+							<TextView
+								android:text="@string/StatBattleNumberShip"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelShipMatchNumber" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightShipMatchNumber" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelShip"
+								android:text="@string/StatVehiclesNumber" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftUSAVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftUSASpadedVehicle" />
+							<TextView
+								android:text="@string/NationUSA"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelUSAVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightUSAVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightUSASpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftGermanyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftGermanySpadedVehicle" />
+							<TextView
+								android:text="@string/NationGermany"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelGermanyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightGermanyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightGermanySpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftUSSRVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftUSSRSpadedVehicle" />
+							<TextView
+								android:text="@string/NationUSSR"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelUSSRVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightUSSRVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightUSSRSpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftGBVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftGBSpadedVehicle" />
+							<TextView
+								android:text="@string/NationGB"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelGBVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightGBVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightGBSpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftJapanVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftJapanSpadedVehicle" />
+							<TextView
+								android:text="@string/NationJapan"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelJapanVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightJapanVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightJapanSpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftItalyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftItalySpadedVehicle" />
+							<TextView
+								android:text="@string/NationItaly"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelItalyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightItalyVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightItalySpadedVehicle" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatLeftFranceVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatLeftFranceSpadedVehicle" />
+							<TextView
+								android:text="@string/NationFrance"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelFranceVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="right"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="13"
+								android:id="@+id/CompareStatRightFranceVehicle" />
+							<TextView
+								android:text=""
+								android:gravity="left"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="12"
+								android:id="@+id/CompareStatRightFranceSpadedVehicle" />
+						</LinearLayout>
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:background="#d60000"
+								android:textColor="#ffffff"
+								android:id="@+id/CompareStatRedLabelEtc"
+								android:text="@string/StatAdditionally" />
+						</LinearLayout>
+
+								
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftRegData" />
+							<TextView
+								android:text="@string/StatRegData"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelRegData" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightRegData" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftFullGameTime" />
+							<TextView
+								android:text="@string/StatFullGameTime"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelFullGameTime" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightFullGameTime" />
+						</LinearLayout>
+						<ImageView
+							android:src="@drawable/_dividercomparer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY" />
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatLeftLionEarned" />
+							<TextView
+								android:text="@string/StatSLEarned"
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="50"
+								android:id="@+id/CompareStatLabelLionEarned" />
+							<TextView
+								android:text=""
+								android:gravity="center"
+								android:textAppearance="?android:attr/textAppearanceSmall"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="25"
+								android:id="@+id/CompareStatRightLionEarned" />
+						</LinearLayout>
+					</LinearLayout>
+				</ScrollView>
+			</LinearLayout>
+															<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/2448806158"
+	android:id="@+id/adViewCompareStat"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+		</LinearLayout>
+		<android.support.design.widget.NavigationView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_gravity="start"
+			android:id="@+id/nav_view"
+			app:menu="@menu/navmenu"
+			app:headerLayout="@layout/_headerdrawerlayout" />
+	</android.support.v4.widget.DrawerLayout>
+</LinearLayout>

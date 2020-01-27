@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+			  <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:minWidth="25px"
+                android:minHeight="25px"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveInfoTank"
+				android:layout_above="@+id/adViewInfoTankkk"   
+					>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="65"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearInfoContainerMainT">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainerT">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="60"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerNationT" />
+                            <Spinner
+                                android:layout_weight="40"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerRankT" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/InfoSpinnerTank" />
+                    </LinearLayout>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/scrollView1T">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/linearScrollContainerLeftPartT">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:minWidth="25px"
+                                android:minHeight="25px"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/linearInfoImageContainerT">
+                                <FrameLayout
+                                    android:layout_height="match_parent"
+                                    android:layout_width="match_parent">
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoImageT"
+                                        android:padding="0dp"
+                                        android:layout_margin="0dp"
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoFlagT"
+                                        android:alpha="0.5"
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                </FrameLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100"
+                                android:id="@+id/linearInfoTextContainerT">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankFirstRide"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextFirstRideYear" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextFirstRideYear" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankGameData"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                        android:id="@+id/CompareTankTextName" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankBR"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextBR" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextBR" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankClass"
+                                        android:gravity="center_vertical"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextType" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextType" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextPlaneCharacter" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextPlaneCharacter" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankPatch"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextTankPatchAdded" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextPatchAdded" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankWeapon"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                        android:id="@+id/InfoTankLabelTextName" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoTankTextCannonName" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankPenetration"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextPenetration" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextPenetration" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankShellSpeed"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextShellSpeed" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextShellSpeed" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/TankShellType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankShellType"
+                                        android:lineSpacingMultiplier="0.8" />
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellAP"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellAPHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellAPCR"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellAPDS"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellAPFSDS"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHEAT"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHEATFS"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellShrapnel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHESH"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellATGM"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellSSM"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHEATGRENADE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHEGRENADE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										 <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellHEVT"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                            <ImageView
+                                            android:src="@drawable/_handingtransparent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShellSAM"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankReloadTime"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextReloadTime" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextReloadTime" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankUpAimAngle"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextUpAimAngle" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextUpAimAngle" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankDownAimAngle"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextDownAimAngle" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextDownAimAngle" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankStabilizer"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextStabilizer" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextStabilizer" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankAAAMGun"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextAAMachineGunExist" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextAAMachineGunExist" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankArmor"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                        android:id="@+id/InfoTankLabelTextWeaponAndTurrels" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankReducedTurret"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextReducedArmorFrontTurret" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextReducedArmorFrontTurret" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankReducedTopSheet"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextReducedArmorTopSheet" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextReducedArmorTopSheet" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankReducedBottomSheet"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextReducedArmorBottomSheet" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextReducedBottomTopSheet" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankTTCH"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_height="match_parent"
+                                        android:layout_width="match_parent"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankMaxSpdRoad"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextMaxSpeedAtRoad" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextMaxSpeedAtRoad" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankMaxSpdGround"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextMaxSpeedAtTerrain" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextMaxSpeedAtTerrain" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankReverse"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextMaxReverseSpeed" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextMaxReverseSpeed" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankAccTo100"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextAccelerationTo100" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextAccelerationTo100" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankTurretTime"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextTurnTurretTime" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextTurnTurretTime" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankHullTime"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextTurnHullTime" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextTurnHullTime" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankEnginePower"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextEnginePower" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextEnginePower" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankWeight"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextWeight" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextWeight" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankPowerToWeight"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoTankLabelTextPowerToWeightRatio" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoTankTextPowerToWeightRatio" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="35"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearScrollContainerRightPartTank">
+                    <TextView
+                        android:text="@string/TankPotentialEnemy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:id="@+id/textView1T" />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/InfoSpinnerPotentialEnemyTank" />
+                    <ListView
+                        android:divider="#00000000"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listViewT" />
+                </LinearLayout>
+            </LinearLayout>
+						<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/5993832321"
+	android:id="@+id/adViewInfoTankkk"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

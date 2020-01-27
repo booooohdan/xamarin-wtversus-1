@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+			  <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:minWidth="25px"
+                android:minHeight="25px"
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveInfoPlane"
+				android:layout_above="@+id/adViewInfoPlane"   >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="65"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearInfoContainerMain">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainer">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="60"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerNation" />
+                            <Spinner
+                                android:layout_weight="40"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerRank" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/InfoSpinnerPlane" />
+                    </LinearLayout>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/scrollView1">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/linearScrollContainerLeftPart">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:minWidth="25px"
+                                android:minHeight="25px"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/linearInfoImageContainer">
+                                <FrameLayout
+                                    android:layout_height="match_parent"
+                                    android:layout_width="match_parent">
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoImage"
+                                        android:padding="0dp"
+                                        android:layout_margin="0dp"
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoCompareFlag"
+                                                                            android:alpha="0.5"
+
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                </FrameLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100"
+                                android:id="@+id/linearInfoTextContainer">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneFirstFly"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextFirstFlyYear" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextFirstFlyYear" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                         
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneGameData"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                        android:id="@+id/ComparePlaneLabelTextName" />
+                                </LinearLayout>
+                              
+                              
+                              
+                            
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneBR"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextBR" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextBR" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneClass"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextType" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextType" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextPlaneCharacter" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextPlaneCharacter" />
+                                </LinearLayout>
+
+
+                              <ImageView
+                                   android:src="@drawable/_dividercomparer"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:scaleType="fitXY" />
+                              <LinearLayout
+                             android:orientation="horizontal"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlanePatch"
+                                    android:gravity="left"
+                                    android:paddingLeft="20dp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoPlaneLabelTextPlanePatchAdded" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoPlaneTextPatchAdded" />
+                              </LinearLayout>
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneFTCH"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_height="match_parent"
+                                        android:layout_width="match_parent"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                       />
+                               
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneMaxSpd0"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextMaxSpeedAt0" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextMaxSpeedAt0" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneMaxSpd5000"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextMaxSpeedAt5000" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextMaxSpeedAt5000" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                            
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneTurn"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextTurnAt0" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextTurnAt0" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneClimb"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextClimb" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextClimb" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                              
+                              
+                              
+                              
+                              <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="@string/PlaneFlutter"
+                                    android:gravity="left"
+                                    android:paddingLeft="20dp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="60"
+                                    android:id="@+id/InfoPlaneLabelTextFlutter" />
+                                <TextView
+                                    android:text=""
+                                    android:gravity="center"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="40"
+                                    android:id="@+id/InfoPlaneTextFlutter" />
+                              </LinearLayout>
+                              <ImageView
+                                  android:src="@drawable/_dividercomparer"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:scaleType="fitXY" />
+                              
+                              
+                              
+                              
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneEnginePower"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextEnginePower" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextEnginePower" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneWeight"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextWeight" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextWeight" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlanePowerToWeight"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextThrustToWeightRatio" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextThrustToWeightRatio" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneWeapon"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"
+                                        android:id="@+id/ComparePlaneLabelTextName" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneVolleyPerSecond"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextWeaponVolleyPerSecond" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextWeaponVolleyPerSecond" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/PlaneHandingWeapon"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneLabelTextHandingWeapon"
+                                        android:lineSpacingMultiplier="0.8" />
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+										 <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingAirToAir"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										 <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingAirToGround"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingBomb"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingRocket"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingCannon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoHandlingTorpedo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                              
+                                    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/PlaneBombLoad"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoPlaneLabelTextBombLoad" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoPlaneTextBombLoad" />
+                                </LinearLayout>
+                             
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+ <TextView
+                                android:text="@string/PlaneWeaponCharacteristick"
+                                android:gravity="center"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                
+                                android:background="#d60000"
+                                android:textColor="#ffffff"
+                                        android:id="@+id/InfoPlaneLabelTextWeaponAndTurrels" />
+                                             </LinearLayout>
+                               <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+  android:text=""
+                                    android:gravity="center"
+                                    android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoPlaneTextWeaponAndTurrels" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="35"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearScrollContainerRightPart">
+                    <TextView
+                        android:text="@string/PlanePotentialEnemy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:id="@+id/textView1" />
+                  <Spinner
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/InfoSpinnerPotentialEnemyPlane"/>
+                    <ListView
+                        android:divider="#00000000"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listView" />
+                </LinearLayout>
+            </LinearLayout>
+					<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/1876469829"
+	android:id="@+id/adViewInfoPlane"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+        <!--НАЧАЛО РАЗМЕТКИ-->
+			  <RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+			    >
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:minWidth="25px"
+                android:minHeight="25px"				
+				android:layout_alignParentTop="true"
+				android:id="@+id/aboveInfoShip"
+				android:layout_above="@+id/adViewInfoShip"   >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="65"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearInfoContainerMainS">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearSpinnerContainerS">
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal">
+                            <Spinner
+                                android:layout_weight="60"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerNationS" />
+                            <Spinner
+                                android:layout_weight="40"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/InfoSpinnerRankS" />
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/InfoSpinnerShip" />
+                    </LinearLayout>
+					  <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/scrollView1S">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/linearScrollContainerLeftPartS">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:minWidth="25px"
+                                android:minHeight="25px"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/linearInfoImageContainerS">
+                                <FrameLayout
+                                    android:layout_height="match_parent"
+                                    android:layout_width="match_parent">
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoImageS"
+                                        android:padding="0dp"
+                                        android:layout_margin="0dp"
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                    <ImageView
+                                        android:src="@drawable/_transparentPlane"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/InfoFlagS"
+                                        android:alpha="0.5"
+                                        android:layout_width="match_parent"
+                                        android:adjustViewBounds="true" />
+                                </FrameLayout>
+								           </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100"
+                                android:id="@+id/linearInfoTextContainerS">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipLaunched"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTextShipLaunched" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextShipLaunched" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+								     <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankGameData"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankBR"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTextBR" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextBR" />
+                                </LinearLayout>
+								    <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankClass"
+                                        android:gravity="center_vertical"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTextType" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextType" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTextCharacter" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextCharacter" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:src="@drawable/_dividercomparer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="fitXY" />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankPatch"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTextPatchAdded" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextPatchAdded" />
+                                </LinearLayout>
+								    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipMainCaliber"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"/>
+                                </LinearLayout>
+
+								  <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipTextMainCaliber" />
+                                </LinearLayout>
+																							     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+															   
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipReload"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelMainCaliberReload" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextMainCaliberReload" />
+                                </LinearLayout>
+																							     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+								        <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipTNT"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelMainCaliberTNT" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextMainCaliberTNT" />
+                                </LinearLayout>
+																							     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+
+								 <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/TankShellType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipLabelMCShellType"
+                                        android:lineSpacingMultiplier="0.8"
+									    android:textColor="#ff000000"/>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+										   <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipMCShellAP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellAPHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellAPCR"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellHEVT"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellHEDF"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellFOG"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+																				                      <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipMCShellShrapnel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                    </LinearLayout>
+                                </LinearLayout>
+															<!--Доп калибр-->
+										    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipAuxiliaryCaliber"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+																  <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipTextAuxiliaryCaliber" />
+                                </LinearLayout>
+															   															     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipReload"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelAuxiliaryCaliberReload" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextAuxiliaryCaliberReload" />
+                                </LinearLayout>
+											
+																							     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+								 <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/TankShellType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipLabelAUShellType"
+                                        android:lineSpacingMultiplier="0.8"
+									    android:textColor="#ff000000"/>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+										   <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipAUShellAP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellAPHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellAPCR"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellHEVT"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellHEDF"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellFOG"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+																					                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAUShellShrapnel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                    </LinearLayout>
+                                </LinearLayout>
+															<!--Зен калибр-->
+																							<!--Доп калибр-->
+										    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipAAACaliber"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+																  <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipTextAAACaliber" />
+                                </LinearLayout>
+															   															     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipReload"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelAAACaliberReload" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextAAACaliberReload" />
+                                </LinearLayout>
+											
+																							     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+								 <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/TankShellType"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipLabelAAAShellType"
+                                        android:lineSpacingMultiplier="0.8"
+									    android:textColor="#ff000000"/>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+										   <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipAAAShellAP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellAPHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellAPCR"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellHE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellHEVT"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellHEDF"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+										                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipAAAShellFOG"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+																	<!--Торпеды-->
+
+									    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipTorpedo"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"/>
+                                </LinearLayout>
+																  <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textSize="13sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipTextTorpedo" />
+                                </LinearLayout>
+															   
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipItem"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTorpedoItem" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextTorpedoItem" />
+                                </LinearLayout>
+																     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+																						   
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipMaxSpeed"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTorpedoMaxSpeed" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextTorpedoMaxSpeed" />
+                                </LinearLayout>
+																     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+														         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipTNT"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTorpedoTNT" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextTorpedoTNT" />
+                                </LinearLayout>
+																     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+																	<!--Дополнительное вооружение-->
+									 <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center">
+                                    <TextView
+                                        android:text="@string/ShipAdditionalWeapon"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipLabelAdditionalWeapon"
+                                        android:lineSpacingMultiplier="0.8"
+									    android:textColor="#ff000000"/>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="60"
+                                        android:gravity="center">
+										   <ImageView
+                                        android:src="@drawable/_handingtransparent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/InfoShipHandingTorpedo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipHandingDepthCharge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipHandingRocket"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />
+                                        <ImageView
+                                            android:src="@drawable/_transparentPlane"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/InfoShipHandingMine"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter" />                                    
+                                    </LinearLayout>
+                                </LinearLayout>
+								
+									<!--ТТХ-->
+
+								
+									    <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/TankTTS"
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="50"
+                                        android:background="#d60000"
+                                        android:textColor="#ffffff"/>
+                                </LinearLayout>
+																														   
+								         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipMaxSpeed"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelMaxSpeed" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextMaxSpeed" />
+                                </LinearLayout>
+																     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipReverseSpeed"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelReverseSpeed" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextReverseSpeed" />
+                                </LinearLayout>
+																								     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipAcceleration"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelAcceleration" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextAcceleration" />
+                                </LinearLayout>
+											
+																								     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipBrakingTime"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelBrakingTime" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextBrakingTime" />
+                                </LinearLayout>
+
+
+																								     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipTurn360"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelTurn360" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextTurn360" />
+                                </LinearLayout>
+
+																								     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipDisplacement"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelDisplacement" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextDisplacement" />
+                                </LinearLayout>
+
+																								     <ImageView
+                                android:src="@drawable/_dividercomparer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY" />
+
+									         <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:text="@string/ShipCrewCount"
+                                        android:gravity="left"
+                                        android:paddingLeft="20dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="60"
+                                        android:id="@+id/InfoShipLabelCrewCount" />
+                                    <TextView
+                                        android:text=""
+                                        android:gravity="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="40"
+                                        android:id="@+id/InfoShipTextCrewCount" />
+                                </LinearLayout>										
+        </LinearLayout>
+                           </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+				<LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="35"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearScrollContainerPartShip">
+                    <TextView
+                        android:text="@string/PlanePotentialEnemy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:id="@+id/textView1T" />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/InfoSpinnerPotentialEnemyShip" />
+                    <ListView
+                        android:divider="#00000000"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listViewS" />
+                </LinearLayout>
+            </LinearLayout>
+								<com.google.android.gms.ads.AdView
+	xmlns:ads="http://schemas.android.com/apk/res-auto" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    ads:adSize="SMART_BANNER"
+	ads:adUnitId="ca-app-pub-8211072909515345/8428423978"
+	android:id="@+id/adViewInfoShip"
+	android:layout_alignParentBottom="true"  />
+								</RelativeLayout>
+			        <!--КОНЕЦ РАЗМЕТКИ-->
+			</LinearLayout>
+		<android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

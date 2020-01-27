@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:fitsSystemWindows="true">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/drawer_layout">
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                layout="@layout/_app_bar" />
+            <!--НАЧАЛО РАЗМЕТКИ-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100">            
+                <TextView
+                    android:text="@string/MenuSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark"
+                    android:paddingLeft="10dp"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:src="@drawable/_dividercomparer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:text="@string/SettingsImperialUnits"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView1"
+                        android:layout_weight="50"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <Switch
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/settingsSwitchKMHToMPH"
+                                android:gravity="center"
+                                android:layout_gravity="center_horizontal" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/SettingsChooseLanguage"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView1"
+                        android:layout_weight="50"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/languageSpiner" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/SettingsStartPage"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView1"
+                        android:layout_weight="50"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/firstActivitySpiner" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30" />
+                    <Button
+                        android:text="@string/SettingsButtonApply"
+                        android:layout_width="0dp"
+                        android:backgroundTint="#d60000"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/settingsButtonApply"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_weight="40"
+                        android:textColor="#ffffffff" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30" />
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="30" />
+                <TextView
+                    android:text="@string/MenuFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark"
+                    android:paddingLeft="10dp"
+                    android:textSize="20sp" />
+                <ImageView
+                    android:src="@drawable/_dividercomparer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/SettingsReddit"
+                        android:layout_width="0dp"
+                        android:layout_height   ="match_parent"
+                        android:layout_weight="40"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20" />
+                    <Button
+                        android:text="Reddit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonReddit"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_weight="40"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+
+                    <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/SettingsDiscord"
+                        android:layout_width="0dp"
+                        android:layout_height   ="match_parent"
+                        android:layout_weight="40"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20" />
+                    <Button
+                        android:text="Discord"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonDiscord"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_weight="40"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+                    <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/SettingsEmail"
+                        android:layout_width="0dp"
+                        android:layout_height   ="match_parent"
+                        android:layout_weight="40"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/background_dark"
+                        android:paddingLeft="10dp" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20" />
+                    <Button
+                        android:text="Email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonEMail"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_weight="40"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="1.0"
+                        android:progressTint="#ffffc400"
+                        android:progressBackgroundTint="#ffffe082"
+                        android:id="@+id/ratingBar"/>
+                </LinearLayout>
+
+                                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30" />
+                    <Button
+                        android:text="@string/MenuFAQ"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/settingsAboutTheAppButton"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_weight="40" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--КОНЕЦ РАЗМЕТКИ-->
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:menu="@menu/navmenu"
+            app:headerLayout="@layout/_headerdrawerlayout" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

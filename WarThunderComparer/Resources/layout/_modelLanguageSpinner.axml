@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/_flagTheBestArgentina"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageFlagLanguage"
+            android:adjustViewBounds="true"
+            android:padding="4dp"  />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:id="@+id/nameTxtLanguage"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        android:background="@android:color/transparent"
+        android:gravity="left"
+        android:typeface="normal"
+        android:textStyle="normal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+        </LinearLayout>
+    <ImageView
+        android:src="@drawable/_dividerSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop" />
+</LinearLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+        <ImageView
+            android:src="@drawable/_flagTheBestUS"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageFlagLanguage"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_weight="20"
+            android:padding="2dp" />
+        <TextView
+            android:text="Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:id="@+id/nameTxtLanguage"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:background="@android:color/transparent"
+            android:gravity="left"
+            android:paddingLeft="5dp"
+            android:layout_weight="80"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/_dividerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1"
+            android:scaleType="centerCrop" />
+</LinearLayout>
+-->

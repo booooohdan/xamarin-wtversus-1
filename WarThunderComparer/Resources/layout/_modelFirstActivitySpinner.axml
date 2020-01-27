@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:weightSum="100"
+		>
+		<ImageView
+			android:src="@drawable/_menuInfo"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:id="@+id/imageFirstActivity"
+			android:scaleType="fitCenter"
+			android:adjustViewBounds="true"
+			android:layout_weight="20"
+			android:paddingTop="5dp"
+			android:paddingBottom="5dp" />
+		<TextView
+			android:text="Text"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:id="@+id/nameTxtFirstActivity"
+			android:textColor="@android:color/black"
+			android:textSize="15dp"
+			android:background="@android:color/transparent"
+			android:gravity="left"
+			android:typeface="normal"
+			android:textStyle="normal"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:paddingBottom="5dp"
+			android:layout_weight="80" />
+	</LinearLayout>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	    <ImageView
+        android:src="@drawable/_dividerSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1"
+        android:scaleType="centerCrop" />
+		</LinearLayout>
+
+</LinearLayout>
